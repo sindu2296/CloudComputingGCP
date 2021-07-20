@@ -7,7 +7,7 @@ import json
 import sys
 import time
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:quickply@/quickply?unix_socket=/cloudsql/modern-impulse-311322:us-central1:quickply"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:quickply@/quickply?unix_socket=/cloudsql/XXX:us-central1:quickply"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 
 db = SQLAlchemy(app)
