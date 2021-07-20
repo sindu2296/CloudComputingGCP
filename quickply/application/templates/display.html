@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+    
+{% block content %} 
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>The jobs are</h1>
+            {% for key, value in data.items() %}
+                <p>{{value}}</p>
+            {% endfor %}
+        </div>
+</div>
+
+{% endblock %}

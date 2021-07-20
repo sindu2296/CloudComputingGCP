@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+   
+{% block content %}
+<h1>Login</h1>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3></h3>
+
+        <form action="{{url_for('dashboard')}}" name="login" method="POST">
+            <label for="username"><b>Username *</b></label>
+            <input type="text" placeholder="Enter email id" name="username" required>
+            <br>
+            <label for="password"><b>Password *</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <br class="clear">
+
+            <button class="btn-submit" >Submit</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

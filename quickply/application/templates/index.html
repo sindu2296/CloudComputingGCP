@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+    
+{% block content %} 
+<div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Welcome to QUICKPLY!</h1>
+            {% if index %}
+            <p>Visiting for the first time? <a href="{{url_for('register')}}">Register</a></p>
+            <p>Already registered? <a href="{{url_for('login')}}">Login</a></p>
+            {% endif %}
+
+            </div>
+    </div>
+{% endblock %}
+
+
+

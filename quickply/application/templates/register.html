@@ -1,0 +1,274 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>New User Registration</h2>
+
+<div class="container">
+  <br>
+  <form name="register" action="{{url_for('registersubmit')}}" method="POST">
+    <label><b>Upload resume *</b></label>
+    <br>
+    <!-- <form action="{{ url_for('fileupload') }}" method="POST" enctype="multipart/form-data"> -->
+    <input type="file" name="file" required />
+      <!-- <input type="submit" required/> -->
+    <!-- </form> -->
+    <br>
+    <br>
+    <label for="username"><b>First Name *</b></label>
+    <input type="text" placeholder="Enter First Name" name="firstname" required>
+    <br>
+    <label for="username"><b>Last Name *</b></label>
+    <input type="text" placeholder="Enter Last Name" name="lastname" required>
+    <br>
+    <label for="phonenumber"><b>Phone Number *</b></label>
+    <input type="text" placeholder="Enter Phone Number" name="phonenumber" required>
+    <br>
+    <label for="email"><b>Email *</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+    <br>
+    <label for="password"><b>Password *</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <br>
+    <label for="linkedinurl"><b>LinkedIn Url</b></label>
+    <input type="text" placeholder="Enter LinkedIn Url" name="linkedinurl">
+    <br>
+    <label for="twitterurl"><b>Twitter Url</b></label>
+    <input type="text" placeholder="Enter Twitter Url" name="twitterurl">
+    <br>
+    <label for="githuburl"><b>Github Url</b></label>
+    <input type="text" placeholder="Enter Github Url" name="githuburl">
+    <br>
+    <label for="portfoliourl"><b>Portfolio Url</b></label>
+    <input type="text" placeholder="Enter Portfolio Url" name="portfoliourl">
+    <br>
+    <label for="otherurl"><b>Other Website Url</b></label>
+    <input type="text" placeholder="Enter any other website Url" name="otherurl">
+    <br>
+    <div class="ui form">
+      <div class="inline fields">
+        <label><b>Are you legally able to work in US? *</b></label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="work" value="yes" required>
+            <label>Yes</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="work" value="no">
+            <label>No</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="ui form">
+      <div class="inline fields">
+        <label><b>Will you now or in the future require sponsorship to be provided? *</b></label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="sponsor" value="Yes" required>
+            <label>Yes</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="sponsor" value="No">
+            <label>No</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="ui form">
+      <div class="inline fields">
+        <label><b>What is your age range?</b></label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="age" value="17 or younger">
+            <label>17 or younger</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="age" value="18-20">
+            <label>18-20</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="age" value="21-29">
+            <label>21-29</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="age" value="30-39">
+            <label>30-39</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="age" value="40-49">
+            <label>40-49</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="age" value="50-59">
+            <label>50-59</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="age" value="60 or older">
+            <label>60 or older</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="ui form">
+      <div class="inline fields">
+        <label><b>What are your racial, ethnic and origin identities?</b></label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="race" value="Hispanic or Latino">
+            <label>Hispanic or Latino</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="race" value="White (Not Hispanic or Latino)">
+            <label>White (Not Hispanic or Latino)</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="race" value="Black or African American (Not Hispanic or Latino)">
+            <label>Black or African American (Not Hispanic or Latino)</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="race" value="Native Hawaiian or other Pacific Islander (Not Hispanic or Latino)">
+            <label>Native Hawaiian or other Pacific Islander (Not Hispanic or Latino)</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="race" value="Asian (Not Hispanic or Latino)">
+            <label>Asian (Not Hispanic or Latino)</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="race" value="American Indian or Alaska Native (Not Hispanic or Latino)">
+            <label>American Indian or Alaska Native (Not Hispanic or Latino)</label>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="race" value="Two or More Races (Not Hispanic or Latino)">
+          <label>Two or More Races (Not Hispanic or Latino)</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="race" value="Decline to self-identify">
+          <label>Decline to self-identify</label>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="ui form">
+      <div class="inline fields">
+        <label><b>What gender do you identify as?</b></label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="gender" value="Man">
+            <label>Man</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="gender" value="Woman">
+            <label>Woman</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="gender" value="Non-binary">
+            <label>Non-binary</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="gender" value="Trans">
+            <label>Trans</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="gender" value="My gender identity is not listed">
+            <label>My gender identity is not listed</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="ui form">
+      <div class="inline fields">
+        <label><b>Are you a veteran?</b></label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="veteran" value="Yes">
+            <label>Yes</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="veteran" value="No">
+            <label>No</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="veteran" value="Decline to self-identify">
+            <label>Decline to self-identify</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="ui form">
+      <div class="inline fields">
+        <label><b>Do you have disability?</b></label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="disability" value="Yes">
+            <label>Yes</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="disability" value="No">
+            <label>No</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="disability" value="Decline to self-identify">
+            <label>Decline to self-identify</label>
+          </div>
+        </div>
+      </div>
+    </div>
+<br class="clear">
+<!-- <input class="btn-submit" type="submit" name="submit"> -->
+<button class="btn-submit">Submit</button>
+</form>
+</div>
+{% endblock %}

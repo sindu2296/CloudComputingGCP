@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<div class="container">
+  <br>
+  <label for="uploadjobs"><b>Upload jobs</b></label>
+  <form action="{{ url_for('fileupload') }}" method="POST" enctype="multipart/form-data">
+    <input type="file" name="csvjobs" />
+    <button>Submit</button>
+  </form>
+  <br>
+  <br>
+<form action="{{url_for('gmail')}}" name="gmail" method="POST">
+  <button class="btn-gmail" name="gmail">Update jobs from emails</button>
+</form>
+<br>
+<br>
+
+<form action="{{url_for('displayjobs')}}" name="displayjobs" method="POST">
+  <label for="email_for_jobs"><b>Enter email id</b></label>
+  <input type="text" placeholder="Enter Email to display jobs" name="email_for_jobs" required>
+  <button class="btn-gmail" name="gmail">Display jobs and statuses</button>
+</form>
+
+</div>
+{% endblock %}

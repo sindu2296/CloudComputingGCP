@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quickply</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/main.css"/>
+</head> 
+<body>
+
+<div class="container-fluid text-center top-container">
+    <img src="static/images/CCproject.png">
+</div>
+<div class="container">
+
+    {% include "includes/nav.html" %}
+
+    {% with messages =  get_flashed_messages(with_categories=true)%}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div id="alertmessage" class = "alert alert-{{ category }}">
+                    <button type="button" class = "close" onclick="close_flash_message();">x</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+    {% include "includes/footer.html" %}
+    
+</div>
+
+<script>
+    function close_flash_message(){
+        document.all.alertmessage.style.display='none';
+        return false;
+    }
+</script>
+
+</body>
+</html>
